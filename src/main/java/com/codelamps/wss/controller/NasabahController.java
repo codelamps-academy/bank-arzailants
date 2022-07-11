@@ -178,11 +178,11 @@ public class NasabahController {
         return nasabahService.save(nasabah);
     }
 
-    @DeleteMapping(value = "/{ktp}")
+    @DeleteMapping(value = "/{id}")
     @Operation(
             summary = "Delete Nasabah by ID",
             description = "Delete Nasabah by ID",
-            tags = {"Student"})
+            tags = {"Nasabah"})
     @ApiResponses(value = {
             @ApiResponse(
                     description = "Success",
@@ -200,6 +200,6 @@ public class NasabahController {
         Nasabah nasabah = nasabahService.findById(id)
                 .orElseThrow(() -> new NasabahNotFoundException("Nasabah with " + id + " is Not Found!"));
         nasabahService.deleteById(nasabah.getId());
-        return "Student with ID :" + id + " is deleted";
+        return "Nasabah with ID :" + id + " is deleted";
     }
 }

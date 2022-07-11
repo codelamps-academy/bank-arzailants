@@ -1,79 +1,22 @@
-# student-crud-app
-
-### Things todo list:
-
-1. Clone this repository: `git clone https://github.com/hendisantika/student-crud-app.git`
-2. Navigate to the folder: `cd student-crud-app`
-3. Change your MySQL Credentials with your own in application.properties
-4. Run the application: `mvn clean spring-boot:run`
-5. Import the POSTMAN Collection.
-
+# Nasabah Web Service
 ### Image Screen shots
 
-Add New Student
+Add New Nasabah
 
-![Add New Student](img/add.png "Add New Student")
+![Add New Nasabah Postman](img/add_postman.png "Add New Nasabah Postman")
+![Add New Nasabah Web](img/add_web.png "Add New Nasabah Web")
 
-![Tambah Data Mahasiswa](img/add.png "Tambah Data Mahasiswa")
+![Delete Data Nasabah Postman](img/delete_postman.png "Delete Data Nasabah Postman")
+![Delete Data Nasabah Web](img/delete_web.png "Delete Data Nasabah Web")
 
-```shell
-curl --location --request POST 'localhost:8080/api/students' \
---header 'Content-Type: application/json' \
---data-raw '{
-    "firstName" : "Uzumaki",
-    "lastName": "Naruto",
-    "email": "uzumaki_naruto@konohagakure.co.jp",
-    "phone": "+6281321411511"
-}'
-```
+![Edit Data Nasabah Postman](img/edit_postman.png "Edit Data Nasabah Postman")
+![Edit Data Nasabah Web](img/edit_web.png "Edit Data Nasabah Web")
 
-Get All Students
+![getAll Data Nasabah Postman](img/getAllNasabah_postman.png "getAll Data Nasabah Postman")
+![getAll Data Nasabah Web](img/getAllNasabah_web.png "getAll Data Nasabah Web")
 
-![Get All Students](img/list.png "Get All Students")
+![getAll Data Nasabah Web2](img/getAllNasabah_web2.png "getAll Data Nasabah Web")
 
-```shell
-curl --location --request GET 'localhost:8080/api/students'
-```
+![get Data Nasabah ById Postman](img/getById_postman.png "get Data Nasabah ById Postman")
+![get Data Nasabah ById Web](img/getById_web.png "get Data Nasabah ById Web")
 
-Update Student
-
-![Update Student](img/update.png "Update Student")
-
-```shell
-curl --location --request PUT 'localhost:8080/api/students/1' \
---header 'Content-Type: application/json' \
---data-raw '{
-    "firstName" : "Uzumaki",
-    "lastName": "Naruto Hokage",
-    "email": "uzumaki_naruto@konohagakure.co.jp",
-    "phone": "+6281321411511"
-}'
-```
-
-Find Student by ID
-
-![Find Student by ID](img/find.png "Find Student by ID")
-
-```shell
-curl --location --request GET 'localhost:8080/api/students/1'
-```
-
-Delete Student
-
-![Delete Student](img/delete.png "Delete Student")
-
-```shell
-curl --location --request DELETE 'localhost:8080/api/students/4'
-```
-
-### Web Screen shot
-
-![Index Home Page](img/list2.png "Index Home Page")
-
-![Index Home Page](img/list3.png "Index Home Page")
-
-![Add Student Page](img/add2.png "Add Student Page")
-
-![Add Student Page](img/add3.png "Add Student Page")
-
-![Edit Student Page](img/edit.png "Edit Student Page")
