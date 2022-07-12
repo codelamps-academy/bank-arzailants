@@ -27,6 +27,7 @@ import java.util.List;
 @RequestMapping("/nasabah")
 public class NasabahController {
 
+
     private final NasabahService nasabahService;
 
     @Autowired
@@ -80,24 +81,25 @@ public class NasabahController {
         return nasabah;
     }
 
-//    @GetMapping(value = "/{ktp}")
-//    @Operation(
-//            summary = "Mendapatkan Data Nasabah by KTP",
-//            description = "Mendapatkan Data Nasabah by KTP",
-//            tags = {"Nasabah"})
-//    @ApiResponses(value = {
-//            @ApiResponse(
-//                    description = "Success",
-//                    responseCode = "200",
-//                    content = @Content(mediaType = "application/json", schema = @Schema(implementation = Nasabah.class))
-//            ),
-//            @ApiResponse(description = "Not Found", responseCode = "404", content = @Content),
-//            @ApiResponse(description = "Internal Error", responseCode = "500", content = @Content)
-//    })
-//    public Nasabah getNasabahByKTP(@PathVariable("ktp") @Min(1) String ktp){
-//        return nasabahService.findById(ktp)
-//                .orElseThrow(() -> new NasabahNotFoundException("Nasabah with " + ktp + " is not Found"));
-//    }
+    @GetMapping(value = "/ktp/{ktp}")
+    @Operation(
+            summary = "Mendapatkan Data Nasabah by KTP",
+            description = "Mendapatkan Data Nasabah by KTP",
+            tags = {"Nasabah"})
+    @ApiResponses(value = {
+            @ApiResponse(
+                    description = "Success",
+                    responseCode = "200",
+                    content = @Content(mediaType = "application/json", schema = @Schema(implementation = Nasabah.class))
+            ),
+            @ApiResponse(description = "Not Found", responseCode = "404", content = @Content),
+            @ApiResponse(description = "Internal Error", responseCode = "500", content = @Content)
+    })
+    public Nasabah getNasabahByKTP(@PathVariable("ktp") @Min(1) String ktp){
+        Nasabah ktpData = nasabahService.findByKTP(ktp)
+                .orElseThrow(() -> new NasabahNotFoundException("Nasabah with " + ktp + " is Not Found!"));
+        return ktpData;
+    }
 
     @PostMapping
     @Operation(

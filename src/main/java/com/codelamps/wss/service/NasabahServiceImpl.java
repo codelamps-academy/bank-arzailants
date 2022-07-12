@@ -11,11 +11,17 @@ import java.util.Optional;
 /**
  * Nama : Andre Rizaldi Brillianto
  * Project : nasabah-webservice-app
- * Email: andrerizaldib@gmail.com
+ * Email : andrerizaldib@gmail.com
+ * website : codelamps.com
+ * instagram : codelamps.inc
+ * telegram : @arzailants
+ * github : codelamps-academy
+ * medium : @codelamps
  * Date: 8/07/22
  */
 @Service
 public class NasabahServiceImpl implements NasabahService {
+
     private final NasabahRepository nasabahRepository;
 
     @Autowired
@@ -33,11 +39,10 @@ public class NasabahServiceImpl implements NasabahService {
         return nasabahRepository.findById(id);
     }
 
-
-//    @Override
-//    public Optional<Nasabah> findByKTP(String ktp) {
-//        return nasabahRepository.findByKTP(ktp);
-//    }
+    @Override
+    public Optional<Nasabah> findByKTP(String ktp) {
+        return nasabahRepository.findByKtp(ktp);
+    }
 
 
     @Override

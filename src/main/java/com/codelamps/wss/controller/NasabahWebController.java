@@ -12,7 +12,12 @@ import org.springframework.web.bind.annotation.PostMapping;
 /**
  * Nama : Andre Rizaldi Brillianto
  * Project : nasabah-webservice-app
- * Email: andrerizaldib@gmail.com
+ * Email : andrerizaldib@gmail.com
+ * website : codelamps.com
+ * instagram : codelamps.inc
+ * telegram : @arzailants
+ * github : codelamps-academy
+ * medium : @codelamps
  * Date: 8/07/22
  */
 @Controller
