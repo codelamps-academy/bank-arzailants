@@ -1,0 +1,34 @@
+version: '3.9'
+
+services:
+  nasabah-app:
+    image: 'arzailant/nasabah-web-service:1.0'
+    build:
+      context: .
+    container_name: nasabah-app
+    ports:
+      - "9999:8080"
+    restart: always
+    depends_on:
+      - db
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://db:5432/blackspring
+      - SPRING_DATASOURCE_USERNAME=blackspring
+      - SPRING_DATASOURCE_PASSWORD=blackspring
+      - SPRING_JPA_HIBERNATE_DDL_AUTO=update
+
+  db:
+    image: 'postgres:14.4-alpine'
+    container_name: db
+    environment:
+      - POSTGRES_DB=blackspring
+      - POSTGRES_USER=blackspring
+      - POSTGRES_PASSWORD=blackspring
+      - PGDATA=/var/lib/postgresql/data/pgdata
+    ports:
+      - "5433:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    restart: always
+volumes:
+  pgdata:
