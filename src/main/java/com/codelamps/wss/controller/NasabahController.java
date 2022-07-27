@@ -195,9 +195,7 @@ public class NasabahController {
             @ApiResponse(description = "Not found", responseCode = "404",
                     content = @Content),
             @ApiResponse(description = "Internal error", responseCode = "500"
-                    , content = @Content)
-    }
-    )
+                    , content = @Content)})
     public String deleteStudent(@PathVariable("id") @Min(1) Long id) {
         Nasabah nasabah = nasabahService.findById(id)
                 .orElseThrow(() -> new NasabahNotFoundException("Nasabah with " + id + " is Not Found!"));
